@@ -13,6 +13,53 @@
 <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700;800&family=Courier+Prime:ital,wght@0,400;0,700;1,400&family=Playfair+Display:ital,wght@0,400;0,600;0,700;0,900;1,400;1,600&family=Alex+Brush&display=swap" rel="stylesheet">
 
 <style>
+.container {
+            display: flex;
+            justify-content: center;
+            align-items: flex-start;
+            gap: 1px;
+            font-size: 12px;
+            margin: 50px auto;
+            max-width: 600px;
+            padding: 0 20px;
+        }
+
+        /* Estilo para sa kaliwa at kanang kolum */
+        .column {
+            display: flex;
+            flex-direction: column;
+            gap: 10px; 
+            flex: 1; /* Pantay ang lapad ng dalawang gilid */
+            text-align: center; /* Naka-center para maganda sa mobile */
+        }
+
+        /* Ang gitnang linya (border) */
+        .divider {
+            width: 1px;
+            background-color: black;
+            align-self: stretch;
+	    opacity: 0.1
+
+        }
+
+        /* --- MOBILE RESPONSIVE SETTINGS --- */
+        /* Kapag ang screen ay mas maliit sa 600 pixels (Cellphone) */
+        @media screen and (max-width: 600px) {
+            .container {
+                flex-direction: column; /* Papuntang pababa ang ayos sa phone */
+                align-items: center;
+                gap: 10px;
+            }
+
+            /* Ginagawang pahalang na linya (separator) sa mobile sa halip na patayo */
+            .divider {
+                width: 80%;
+                height: 2px;
+		align-self: center;
+            }
+        }
+
+
 :root {
   --paper: #f4efe4;
   --paper-card: #FAF6ED;
@@ -904,10 +951,36 @@ p {
         </div>
         <div class="party-card">
           <h3>Principal Sponsors</h3>
-          <p>Juan Dela Cruz</p>
-          <p>Victoria Dela Cruz</p>
-          <p>Miguel Santos</p>
-          <p>Rosa Santos</p>
+        
+          <div class="container">
+        <!-- Kaliwang Kolum -->
+        <div class="column">
+	    <b>Ninong</b>
+            <div>Juan Dela Cruz</div>
+            <div>Victoro Dela Cruz</div>
+            <div>Edric Tagle</div>
+            <div>Miguel Fowler</div>
+            <div>Romar Santos</div>
+        </div>
+
+        <!-- Gitnang Linya (Nagiging pahalang sa cellphone) -->
+        <div class="divider"></div>
+
+        <!-- Kanang Kolum -->
+        <div class="column">
+	    <b>Ninang</b>
+            <div>Victoria Dela Cruz</div>
+            <div>Mama Maria</div>
+            <div>Lexi Lore Tagle</div>
+            <div>Tonny Fowler</div>
+            <div>Rosmar Santos</div>
+        </div>
+    </div>
+
+
+
+
+
         </div>
         <div class="party-card">
           <h3>Secondary Sponsors</h3>
